@@ -1,3 +1,7 @@
+aws ec2 create-security-group --group-name sarumugam-cli-sec-grp --description "sarumugam-aws cli SecGrp" --vpc-id vpc-b425efd0
+
+aws ec2 authorize-security-group-ingress --group-name sarumugam-cli-sec-grp --protocol tcp --port 22 --cidr 199.16.140.30/32
+
 aws ec2 run-instances --image-id ami-c229c0a2--count 1 --user-data file://install.tomcat.txt --instance-type t2.micro --key-name key-name --security-group-ids sg-21674546 --subnet-id subnet-a19264d7
 
 
