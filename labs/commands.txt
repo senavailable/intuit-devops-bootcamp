@@ -1,0 +1,4 @@
+aws ec2 run-instances --image-id ami-c229c0a2--count 1 --user-data file://install.tomcat.txt --instance-type t2.micro --key-name key-name --security-group-ids sg-21674546 --subnet-id subnet-a19264d7
+
+
+
