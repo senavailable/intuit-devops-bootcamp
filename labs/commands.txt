@@ -5,4 +5,6 @@ aws ec2 authorize-security-group-ingress --group-name sarumugam-cli-sec-grp --pr
 aws ec2 run-instances --image-id ami-c229c0a2--count 1 --user-data file://install.tomcat.txt --instance-type t2.micro --key-name key-name --security-group-ids sg-21674546 --subnet-id subnet-a19264d7
 
 
+aws cloudformation create-stack --template-body file://full.stack.json --parameters "ParameterKey=KeyName,ParameterValue=Steven_Tsang@intuit.com" 'ParameterKey=SubnetIds,ParameterValue="subnet-109a4774,subnet-a19264d7,subnet-d31f1c8a"' "ParameterKey=VpcId,ParameterValue=vpc-b425efd0" --stack-name=sarumugam-fullstack-`date +%F-%H-%M-%S`
+
 
